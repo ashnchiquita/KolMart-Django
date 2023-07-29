@@ -24,7 +24,7 @@ Chiquita Ahsanunnisa (13521129)
 
 ## Run Command
 1. Run `pip install -r requirements.txt`
-2. Create `.env` folder inside ./kolmart directory
+2. Create `.env` folder inside `./kolmart` directory
 3. Put your JWT secret key (`JWT_SECRET`), single service account username (`SS_USERNAME`), single service account password (`SS_PASSWORD`), single service api URL (`SS_API_URL`) in `.env` file
 4. Run migration command and if needed, run seeding command
 5. Run `python manage.py runserver`
@@ -34,8 +34,7 @@ Chiquita Ahsanunnisa (13521129)
 - POST `/api/login`
 - POST `/api/logout`
 - GET `/api/order`
-- GET `/api/product/:id`
-- POST `/api/product/:id`
+- GET, POST `/api/product/:id`
 - POST `/api/register`
 - GET `/api/self`
 - GET `/api/store`
