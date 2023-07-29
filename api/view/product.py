@@ -56,7 +56,7 @@ class ProductView(APIView):
         req_stok = request.data['stok']
 
         if (req_stok > stok):
-            return createResponse(False, 'Insufficient stock', status=status.HTTP_400_BAD_REQUEST)
+            return createResponse(False, 'Insufficient stock', None, status=status.HTTP_400_BAD_REQUEST)
 
         orderdata = {
             'user': cust['id'],
