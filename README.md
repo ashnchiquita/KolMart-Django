@@ -22,9 +22,7 @@ Chiquita Ahsanunnisa (13521129)
 2. Put seed data inside that file
 3. Run `python manage.py initdata`
 
-## Via Docker
-
-## Local
+## Run Command
 1. Run `pip install -r requirements.txt`
 2. Create `.env` folder inside ./kolmart directory
 3. Put your JWT secret key (`JWT_SECRET`), single service account username (`SS_USERNAME`), single service account password (`SS_PASSWORD`), single service api URL (`SS_API_URL`) in `.env` file
@@ -60,10 +58,10 @@ Single service implemented using TypeScript with string typing, no `as` and `any
 6. Product (`/product/{product_id}`) with average score 96.25
 ![Screen Shot 2023-07-29 at 19 10 37](https://github.com/ashnchiquita/KolMart-Django/assets/88751131/4352c3eb-4e7d-458f-9a05-12b5b2c09219)
 
-8. Cart (`/cart`) with average score 98
+8. Cart (`/cart`) with average score 98\
 ![Screen Shot 2023-07-29 at 19 14 24](https://github.com/ashnchiquita/KolMart-Django/assets/88751131/d557cd3b-0922-47f6-8033-27e89364ff89)
 
-9. Orders (`/order`) with average score 98
+9. Orders (`/order`) with average score 98\
 ![Screen Shot 2023-07-29 at 19 15 11](https://github.com/ashnchiquita/KolMart-Django/assets/88751131/aaf71197-6e6d-4104-afc6-72976b760d68)
 
 ## B06 - Responsive Layout
