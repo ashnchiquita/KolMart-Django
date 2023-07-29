@@ -22,14 +22,13 @@ Chiquita Ahsanunnisa (13521129)
 2. Put seed data inside that file
 3. Run `python manage.py initdata`
 
-## Via Docker
-
-## Local
+## Run Command
 1. Run `pip install -r requirements.txt`
 2. Create `.env` folder inside ./kolmart directory
 3. Put your JWT secret key (`JWT_SECRET`), single service account username (`SS_USERNAME`), single service account password (`SS_PASSWORD`), single service api URL (`SS_API_URL`) in `.env` file
 4. Run migration command and if needed, run seeding command
 5. Run `python manage.py runserver`
+6. App will run at `http://localhost:8000`
 
 # Endpoints
 - POST `/api/login`
@@ -48,21 +47,28 @@ Single service implemented using TypeScript with string typing, no `as` and `any
 
 ## B05 - Lighthouse
 1. Login (`/login`) with average score 95.5
+![Screen Shot 2023-07-29 at 19 09 15](https://github.com/ashnchiquita/KolMart-Django/assets/88751131/165beebf-ad55-4e90-9c1d-9f727c91be48)
 
-2. Register (`/register`) with average score 95.5
+3. Register (`/register`) with average score 95.5
+![Screen Shot 2023-07-29 at 19 08 09](https://github.com/ashnchiquita/KolMart-Django/assets/88751131/071da31e-a0da-490b-8671-da5cebec7fb7)
 
-3. Store (`/store`) with average score 97.5
+5. Store (`/store`) with average score 97.5
+![Screen Shot 2023-07-29 at 19 09 55](https://github.com/ashnchiquita/KolMart-Django/assets/88751131/42e2520b-0f29-4d47-ad4a-3c32b684b413)
 
-4. Product (`/store/{product_id}`) with average score 96.25
+6. Product (`/product/{product_id}`) with average score 96.25
+![Screen Shot 2023-07-29 at 19 10 37](https://github.com/ashnchiquita/KolMart-Django/assets/88751131/4352c3eb-4e7d-458f-9a05-12b5b2c09219)
 
-5. Cart (`/cart`) with average score 98
+8. Cart (`/cart`) with average score 98\
+![Screen Shot 2023-07-29 at 19 14 24](https://github.com/ashnchiquita/KolMart-Django/assets/88751131/d557cd3b-0922-47f6-8033-27e89364ff89)
 
-6. Orders (`/order`) with average score 98
+9. Orders (`/order`) with average score 98\
+![Screen Shot 2023-07-29 at 19 15 11](https://github.com/ashnchiquita/KolMart-Django/assets/88751131/aaf71197-6e6d-4104-afc6-72976b760d68)
 
 ## B06 - Responsive Layout
 KolMart frontend is built responsive.
+
 ## B07 - API Documentation
-API documentation for single service can be accessed [here](http://deploy.com). API documentation for monolith can be accessed [here](http://deploy.com).
+API documentation for single service can be accessed [here](https://app.swaggerhub.com/apis/16521248/ohl_single_service/1). API documentation for monolith can be accessed [here](https://app.swaggerhub.com/apis/16521248/ohl_monolith/1).
 
 ## B11 - Additional Features
 1. Logout
