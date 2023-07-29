@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load tags %}
+
+<div class="container">
+  <div class="border rounded p-4 m-4">
+    <h3 class="alert alert-light rounded-pill text-dark"
+        style="text-align:center">Orders</h3>
+    <hr>
+    <div class="table-responsive">
+    <table class="table table-striped mx-auto overflow-hidden">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Product</th>
+          <th>Date</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for order in orders %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{order.barang_name}}</td>
+          <td>{{order.tanggal}}</td>
+          <td>{{order.harga}}</td>
+          <td>{{order.jumlah}}</td>
+          <td>IDR {{order|total_order_price}}</td>
+        </tr>
+
+        {% endfor %}
+
+      </tbody>
+    </table>
+    <div class="container p-4">
+      <div class="pagination justify-content-center">
+        <span class="step-links">
+          {% if orders.has_previous %}
+            <a href="?page=1" class="btn btn-warning">&laquo;</a>
+            <a href="?page={{ orders.previous_page_number }}" class="btn btn-warning">Previous</a>
+          {% endif %}
+
+          <span class="current">
+            Page {{ orders.number }} of {{ orders.paginator.num_pages }}
+          </span>
+
+          {% if orders.has_next %}
+            <a href="?page={{ orders.next_page_number }}"  class="btn btn-warning">Next</a>
+            <a href="?page={{ orders.paginator.num_pages }}"  class="btn btn-warning">&raquo;</a>
+          {% endif %}
+        </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

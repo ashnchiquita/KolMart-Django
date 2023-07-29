@@ -1,0 +1,29 @@
+[
+  {
+    "pk": 1,
+    "model": "api.User",
+    "fields": {
+      "username": "cust1",
+      "email": "cust1@gmail.com",
+      "password": "cust1"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "api.User",
+    "fields": {
+      "username": "cust2",
+      "email": "cust2@gmail.com",
+      "password": "cust2"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "api.User",
+    "fields": {
+      "username": "cust3",
+      "email": "cust3@gmail.com",
+      "password": "cust3"
+    }
+  }
+]

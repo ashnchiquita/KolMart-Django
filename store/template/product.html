@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load tags %}
+
+<div class="container-fluid mt-3">
+  <div class="row justify-content-start mx-auto">
+    <div class="card mx-auto mb-3 col-9" style="width: 15rem;">
+      <div class="card-body">
+        <h2 class="card-title">{{product.nama}}</h2>
+        <h5 class="card-title">Price</h5>
+        <p class="card-text">IDR {{product.harga}}</p>
+        <h5 class="card-title">Remaining Product(s)</h5>
+        <p class="card-text">{{product.stok}} product(s) left</p>
+        <h5 class="card-title">Company</h5>
+        <p class="card-text">{{product.perusahaan.nama}}</p>
+        <h5 class="card-title">Location</h5>
+        <p class="card-text">{{product.perusahaan.alamat}}</p>
+
+        <div>
+          {% if product|is_in_cart:request.session.cart %}
+          <div class="row no-gutters">
+            <form action="{% url 'product' product.id %}" class="col-2 "
+              method="post">
+              {% csrf_token %}
+              <input hidden type="text" name='product' value='{{product.id}}'>
+              <input hidden type="text" name='remove' value='True'>
+              <input type="submit" value=" - "
+                class="btn btn-block btn-warning border-right">
+            </form>
+            <div class="text-center col">{{product|cart_quantity:request.session.cart}} product(s)
+              in Cart</div>
+            <form action="{% url 'product' product.id %}" class="col-2 "
+              method="post">
+              {% csrf_token %}
+              <input hidden type="text" name='product' value='{{product.id}}'>
+              <input type="submit" value=" + "
+                class="btn btn-block btn-warning border-left">
+            </form>
+          </div>
+          {% else %}
+          <form action="{% url 'product' product.id %}" method="POST"
+            class="btn-block">
+            {% csrf_token %}
+            <input hidden type="text" name='product' value='{{product.id}}'>
+            <input type="submit"
+              class="float-right btn btn-warning form-control"
+              value="Add To Cart">
+          </form>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
